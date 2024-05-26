@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.top {
+  background-color: #C22D57;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+}
+.header-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+.info {
+  margin-right: 20px;
+}
+.whish {
+  display: flex;
+  flex-direction: flex-end;
+}
+.logo {
+  width: 180px;
+  height: 130px;
+}
+.seller-btn {
+  background-color: #C22D57;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  padding: 8px 15px !important;
+  border-radius: 10px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+}
+.map-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.drop-btn{
+  background-color: #C22D57;
+  border: none;
+}
+.drop-login{
+  margin-top: 10px;
+}
+.res-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-menu{
+  padding-left: 0px !important;
+}
+.dropdown-menu li a{
+  text-decoration: none;
+  color: #000;
+}
+.navbar-nav .nav-link.active{
+  color: #fff !important;
+}
+.map-img{
+  height: 30px;
+  width: 30px;
+}
+.category-dropdown {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  background-color: #f1f1f1;
+}
+.menu-bg{
+  background-color: #C22D57;
+}
+.search-input {
+  padding: 8px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+.search-button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #C22D57;
+  color: #fff;
+  cursor: pointer;
+}
+.dropdown-item.active{
+  background-color: #C22D57 !important;
+}
+.header-sec {
+  display: flex;
+  justify-content: flex-end;
+}
+.icon-img {
+  width: 25px;
+  height: 25px;
+  color: #C22D57;
+}
+.icon-img1{
+ font-size: 25px;
+  color: #C22D57;
+}
+.header-sec2{
+    align-items: center;
+}
+
+.nav-item{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.mob-menu{
+  display: flex;
+  justify-content: center;
+}
+
+.footer{
+  background: linear-gradient(180deg, #A25EBA 0%, #5C0606 100%);
+  color: #fff;
+}
+.copy-right{
+  color: rgba(255, 255, 255, 1);
+}
+.toggle-bg{
+  background-color: #fff;
+}
+
+
+@media only screen and (max-width: 600px){
+  .header-sec {
+    display: none;
+  }
+  .info {
+    margin-right: 0px;
+  }
+  .top {
+    background-color: #C22D57;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    color: #fff;
+  }
+}
