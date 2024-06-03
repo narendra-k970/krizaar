@@ -244,6 +244,7 @@
 .spe-box {
   background-color: #E5D0CF;
   text-align: center;
+  border-radius: 5px;
 }
 
 .counter-box {

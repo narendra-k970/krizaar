@@ -111,7 +111,9 @@ const Header = () => {
                   </li>
                   <li>
                     <NavLink className="dropdown-item" to="#">
-                      <button onClick={handleLogout}>Logout</button>
+                      <button onClick={handleLogout} className="logout-btn">
+                        Logout
+                      </button>
                     </NavLink>
                   </li>
                 </ul>
@@ -124,7 +126,9 @@ const Header = () => {
               </span>
             </div>
             <div className="col-lg-2 be-seller">
-              <button className="seller-btn">Become A Seller</button>
+              <NavLink to="/vendorsignup">
+                <button className="seller-btn">Become A Seller</button>
+              </NavLink>
             </div>
           </div>
         </div>

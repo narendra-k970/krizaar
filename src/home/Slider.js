@@ -23,6 +23,7 @@ import accessories from "../img/accessories.png";
 import hammer from "../img/hammer.png";
 import extension from "../img/board.png";
 import banner1 from "../img/boss-banner.png";
+import CountdownTimer from "./CountdownTimer";
 
 const Slider = () => {
   return (
@@ -32,14 +33,7 @@ const Slider = () => {
           <div className="row prod-slider">
             <div className="col-lg-4">
               <div className="spe-box">
-                <h3 className="offer-h">
-                  Special offers
-                  <br />
-                  Up to <span className="disc">50%</span> off
-                </h3>
-                <div className="counter-box">
-                  <h4 className="harry-h">Harry up! offer end in </h4>
-                </div>
+                <CountdownTimer />
               </div>
             </div>
             <div className="col-lg-8">
@@ -379,10 +373,7 @@ const Slider = () => {
                         ></i>
                         Add to cart
                       </button>
-                      <i
-                        className="fa fa-heart icon-ad"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fa fa-heart icon-ad" aria-hidden="true"></i>
                       <i
                         className="fa fa-exchange icon-ad"
                         aria-hidden="true"

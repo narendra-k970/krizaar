@@ -15,6 +15,7 @@ import Dashboard from "./admin/component/Dashboard";
 import Vendorsignup from "./componenth/common/Vendorsignup";
 import Forgotpassword from "./componenth/common/Forgotpassword";
 import Brand from "./admin/add/Brand";
+import VendorLogin from "./componenth/common/VendorLogin";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/forgotpassword" element={<Forgotpassword />} />
         <Route path="/resetpassword" element={<Resetpassword />} />
         <Route path="/vendorsignup" element={<Vendorsignup />} />
+        <Route path="/vendorlogin" element={<VendorLogin />} />
         <Route path="/brand" element={<Brand />} />
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
+import { NavLink } from "react-router-dom";
 import Footer from "../header/Footer";
 import { REACT_BASE_PATH } from "../../api";
 import axios from "axios";
@@ -41,7 +42,7 @@ const Vendorsignup = () => {
         },
       })
       .then((resp) => {
-        console.log(resp, "________________________+++++++++");
+        console.log(resp, "________+++++++++");
         localStorage.setItem("vendor", JSON.stringify(resp));
         setVendor(resp.data);
       })
@@ -369,6 +370,12 @@ const Vendorsignup = () => {
               </div>
             </div>
           )}
+          <hr className="mt-5 mb-3" />
+          <div className="d-flex justify-content-center">
+            <NavLink to="/vendorlogin">
+              <button className="seller-btn">Login As Vendor</button>
+            </NavLink>
+          </div>
         </div>
       </section>
       <Footer />
