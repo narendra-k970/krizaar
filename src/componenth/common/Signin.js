@@ -35,7 +35,6 @@ const Signin = () => {
                 <div className="sign-form">
                   <h5 className="mb-4">Signin</h5>
                   <label htmlFor="email">Email</label>
-                  <br />
                   <input
                     type="text"
                     id="username"
@@ -46,10 +45,7 @@ const Signin = () => {
                     placeholder=""
                     required
                   />
-                  <br />
-                  <br />
                   <label htmlFor="email">Password</label>
-                  <br />
                   <input
                     type="text"
                     id="password"

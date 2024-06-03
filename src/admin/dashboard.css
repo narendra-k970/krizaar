@@ -53,3 +53,139 @@ label {
   padding: 3px 5px;
   color: #fff;
 }
+.measurment-row{
+  border: 1px solid #C22D57;
+  padding: 5px;
+}
+.addsec{
+  display: flex;
+  justify-content: flex-end;
+
+}
+.addsec button{
+  background-color: #C22D57;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+}
+.form-container1 {
+  display: grid;
+  gap: 1rem;
+}
+.form-row1 {
+  display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+}
+.form-group1 {
+  flex: 1;
+  /* min-width: 180px; */
+}
+/* .form-group1 label {
+  margin-bottom: 5px;
+} */
+/* .add-form{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+.speci-row{
+  display: flex;
+  justify-content: space-between;
+}
+.speci-name{
+  width: 100%;
+}
+.sear-cat{
+  margin-right: 10px;
+}
+.sel-inp{
+  margin: 10px;
+  padding: 5px;
+}
+.prod-gallery{
+  background-color: #C22D57;
+  color: #000;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.upload-btn{
+  background-color: #C22D57;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  width: 10rem;
+}
+.pro-fm{
+  background-color: #f1f1f1;
+}
+
+/* category-sidebar */
+
+.category-container {
+  width: 300px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.category-list {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.category-name {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.subcategory-list {
+  padding-left: 15px;
+}
+
+.subcategory-name {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.category-name input,
+.subcategory-name input {
+  margin-right: 10px;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: .800rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--bs-tertiary-bg);
+  border: 1px solid #000;
+  /* border-radius: var(--bs-border-radius); */
+}
+.measurement-row{
+  border: 1px solid #C22D57;
+  padding: 5px;
+}
+/* Brand */
+.addnewb{
+  color: #C22D57;
+  font-size: 14px;
+}

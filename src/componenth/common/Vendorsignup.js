@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import Footer from "../header/Footer";
 import { REACT_BASE_PATH } from "../../api";
 import axios from "axios";
-import { useState } from "react";
 
 const Vendorsignup = () => {
-  const [fname, setFname] = useState();
-  const [lname, setLname] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [vsupplier, setVsupplier] = useState();
-  const [ecommerce, setEcommerce] = useState();
-  const [eselling, setEselling] = useState();
-  const [otp, setOtp] = useState();
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [vsupplier, setVsupplier] = useState("");
+  const [ecommerce, setEcommerce] = useState("");
+  const [eselling, setEselling] = useState("");
+  const [otp, setOtp] = useState("");
 
   const [showFirst, setShowFirst] = useState(true);
   const [showSecond, setShowSecond] = useState(false);
@@ -22,7 +21,11 @@ const Vendorsignup = () => {
   const [showFive, setShowFive] = useState(false);
 
   const [vendor, setVendor] = useState({});
-  console.log(vendor, "------------------------------");
+
+  useEffect(() => {
+    const storedVendor = localStorage.getItem("vendor");
+    console.log(JSON.parse(storedVendor), "++++++++++++++++++++++++++++++");
+  }, []);
 
   const submitData = () => {
     axios
@@ -38,11 +41,12 @@ const Vendorsignup = () => {
         },
       })
       .then((resp) => {
-        console.log(resp);
+        console.log(resp, "________________________+++++++++");
+        localStorage.setItem("vendor", JSON.stringify(resp));
         setVendor(resp.data);
       })
       .catch((err) => {
-        console.log("error");
+        console.log("error", err);
       });
   };
 
@@ -104,18 +108,18 @@ const Vendorsignup = () => {
                     <label htmlFor="name">First Name</label>
                     <input
                       type="text"
-                      id="email"
-                      name="email"
+                      id="fname"
+                      name="fname"
                       value={fname}
                       onChange={(e) => setFname(e.target.value)}
                       className="email-input"
                       required
                     />
-                    <label htmlFor="email">Last Name</label>
+                    <label htmlFor="lname">Last Name</label>
                     <input
                       type="text"
-                      id="email"
-                      name="email"
+                      id="lname"
+                      name="lname"
                       value={lname}
                       onChange={(e) => setLname(e.target.value)}
                       className="email-input"
@@ -123,7 +127,7 @@ const Vendorsignup = () => {
                     />
                     <label htmlFor="email">Email/Phone No.</label>
                     <input
-                      type="mail"
+                      type="email"
                       id="email"
                       name="email"
                       value={email}
@@ -132,11 +136,11 @@ const Vendorsignup = () => {
                       required
                     />
 
-                    <label htmlFor="email">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input
-                      type="text"
-                      id="email"
-                      name="email"
+                      type="password"
+                      id="password"
+                      name="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="email-input"
@@ -322,12 +326,12 @@ const Vendorsignup = () => {
                   <div className="sign-form">
                     <h5 className="mb-4">Authentication required</h5>
                     <p>
-                      <b>IN +917042469640 Change</b>
+                      <b>IN +917042469640 Change</b>
                       <br />
                       We’ve sent a One Time Password (OTP) to the mobile number
                       above. Please enter it to complete verification
                     </p>
-                    <label htmlFor="email">Enter OTP</label>
+                    <label htmlFor="otp">Enter OTP</label>
                     <br />
                     <input
                       type="text"
