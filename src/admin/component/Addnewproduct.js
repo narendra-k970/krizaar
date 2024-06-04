@@ -4,9 +4,12 @@ import Categories from "../add/Categories";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import BrandDropdown from "../add/BrandDropdown";
+import BrandPopup from "./BrandPopup";
+import UnitPopup from "./UnitPopup";
 import MeasurementParameterDropdown from "../add/ParameterDropdown";
 import MeasurementUnitDropdown from "../add/MeasurmentDropdown";
 import axios from "axios";
+import ParameterPopup from "./ParameterPopup";
 
 const Addnewproduct = () => {
   const [productName, setProductName] = useState("");
@@ -218,9 +221,11 @@ const Addnewproduct = () => {
               </div>
               <div className="my-3">
                 <div>
-                  <label>
-                    Select Brand
-                    <span className="addnewb">(Add New Brand)</span>
+                  <label className="d-flex">
+                    <span>Select Brand</span>
+                    <span className="ms-2">
+                      <BrandPopup />
+                    </span>
                   </label>
                   <BrandDropdown onBrandChange={handleBrandChange} />
                   {selectedBrand && (
@@ -233,9 +238,11 @@ const Addnewproduct = () => {
               <h4>Product Measurement and Price Detail</h4>
               <div className="row measurement-row">
                 <div className="col-lg-6">
-                  <label>
-                    Select Parameter
-                    <span className="addnewb">(Add New Parameter)</span>
+                  <label className="d-flex">
+                    <span>Select Parameter</span>
+                    <span className="ms-2">
+                      <ParameterPopup />
+                    </span>
                   </label>
                   <MeasurementParameterDropdown
                     onParameterChange={handleParameterChange}
@@ -247,9 +254,11 @@ const Addnewproduct = () => {
                   )}
                 </div>
                 <div className="col-lg-6">
-                  <label>
-                    Select Unit
-                    <span className="addnewb">(Add New Unit)</span>
+                  <label className="d-flex">
+                    <span>Select Unit</span>
+                    <span className="ms-2">
+                      <UnitPopup />
+                    </span>
                   </label>
                   <MeasurementUnitDropdown onUnitChange={handleUnitChange} />
                   {selectedUnit && (

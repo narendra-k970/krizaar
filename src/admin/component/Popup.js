@@ -27,6 +27,7 @@ const Popup = () => {
 
   const [category, setCategory] = useState();
   const [catImage, setCatimage] = useState();
+  const [successMessage, setSuccessMessage] = useState("");
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
@@ -53,10 +54,11 @@ const Popup = () => {
 
   function openModal() {
     setIsOpen(true);
+    setSuccessMessage("");
   }
 
   function afterOpenModal() {
-    subtitle.style.color = "#f00";
+    subtitle.style.color = "#C22D57";
   }
 
   function closeModal() {
@@ -80,6 +82,12 @@ const Popup = () => {
         }
       );
       console.log(response.data, "Category Add Successfully");
+
+      // Show success message and close modal
+      setSuccessMessage("Category added successfully!");
+      setTimeout(() => {
+        closeModal();
+      }, 2000); // Close modal after 2 seconds
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -99,8 +107,14 @@ const Popup = () => {
           contentLabel="Example Modal"
         >
           <div className="modal-close">
-            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add Category</h2>
-            <button onClick={closeModal}>
+            <h2
+              ref={(_subtitle) => (subtitle = _subtitle)}
+              style={{ color: "#C22D57" }}
+            >
+              Add Category
+            </h2>
+
+            <button onClick={closeModal} className="close-popup">
               <i className="fa fa-close"></i>
             </button>
           </div>
@@ -153,14 +167,10 @@ const Popup = () => {
             )}
           </div>
           <br />
-          <button
-            className="add-cat-btn"
-            onClick={() => {
-              submitData();
-            }}
-          >
+          <button className="add-cat-btn" onClick={submitData}>
             Submit
           </button>
+          {successMessage && <p>{successMessage}</p>}
         </Modal>
       </div>
     </>

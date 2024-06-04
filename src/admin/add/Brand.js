@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { REACT_BASE_PATH } from "../../api";
+import Header from "../component/Header";
 
 const Brand = () => {
   const [brandName, setBrandName] = useState("");
@@ -46,29 +47,32 @@ const Brand = () => {
   };
 
   return (
-    <div>
-      <h1>Add a New Brand</h1>
+    <>
+      <Header />
       <div>
-        <label>Brand Name:</label>
-        <input
-          type="text"
-          value={brandName}
-          onChange={(e) => setBrandName(e.target.value)}
-          required
-        />
+        <h1>Add a New Brand</h1>
+        <div>
+          <label>Brand Name:</label>
+          <input
+            type="text"
+            value={brandName}
+            onChange={(e) => setBrandName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Image:</label>
+          <input
+            type="file"
+            onChange={(e) => setImage(e.target.files[0])}
+            required
+          />
+        </div>
+        <button type="submit" onClick={handleSubmit}>
+          Add Brand
+        </button>
       </div>
-      <div>
-        <label>Image:</label>
-        <input
-          type="file"
-          onChange={(e) => setImage(e.target.files[0])}
-          required
-        />
-      </div>
-      <button type="submit" onClick={handleSubmit}>
-        Add Brand
-      </button>
-    </div>
+    </>
   );
 };
 
