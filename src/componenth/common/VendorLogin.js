@@ -3,7 +3,7 @@ import Header from "../header/Header";
 import Footer from "../header/Footer";
 import { useState } from "react";
 import { REACT_BASE_PATH } from "../../api";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const VendorLogin = () => {
@@ -22,7 +22,7 @@ const VendorLogin = () => {
           },
         }
       );
-      navigate("/");
+      navigate("/dashboard");
 
       console.log(response.data, "Login Succesfully");
     } catch (error) {
@@ -84,9 +84,11 @@ const VendorLogin = () => {
               <span className="amazon">or</span>
             </div>
             <div className="create-acc-box">
-              <button className="create-acc">
-                If You have not Signup. Plz Signup Before
-              </button>
+              <NavLink to="/vendorsignup">
+                <button className="create-acc">
+                  If You have not Signup. Plz Signup Before
+                </button>
+              </NavLink>
             </div>
           </div>
         </div>

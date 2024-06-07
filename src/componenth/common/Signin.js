@@ -4,10 +4,12 @@ import Footer from "../header/Footer";
 import { useState } from "react";
 import { REACT_BASE_PATH } from "../../api";
 import axios from "axios";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Signin = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const submitData = async () => {
     try {
@@ -17,7 +19,8 @@ const Signin = () => {
           password: password,
         },
       });
-      console.log(response.data, "Login Succesfully");
+      console.log(response.data, "Login Successfully");
+      navigate("/"); // Navigate to home page after successful login
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -47,7 +50,7 @@ const Signin = () => {
                   />
                   <label htmlFor="email">Password</label>
                   <input
-                    type="text"
+                    type="password"
                     id="password"
                     name="password"
                     value={password}
@@ -62,9 +65,7 @@ const Signin = () => {
                     <button
                       type="submit"
                       className="sub-btn"
-                      onClick={() => {
-                        submitData();
-                      }}
+                      onClick={submitData}
                     >
                       Signin
                     </button>
@@ -77,9 +78,11 @@ const Signin = () => {
               <span className="amazon">or</span>
             </div>
             <div className="create-acc-box">
-              <button className="create-acc">
-                If You have not Signup. Plz Signup Before
-              </button>
+              <NavLink to="/signup">
+                <button className="create-acc">
+                  If You have not Signup. Plz Signup Before
+                </button>
+              </NavLink>
             </div>
           </div>
         </div>

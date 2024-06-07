@@ -145,7 +145,7 @@ const Addnewproduct = () => {
       "product_specfication_detail[0][specification_detail]",
       speDescription
     );
-    formData.append("product_banner_image", image); // Assuming `image` is a File object
+    formData.append("product_banner_image", image);
     for (let i = 0; i < gallery.length; i++) {
       formData.append("product_gallery_image[]", gallery[i]);
     }

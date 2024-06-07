@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { map } from "../img/map-marker-alt.png";
 
 function MyLocation() {
   const [position, setPosition] = useState({ latitude: null, longitude: null });
@@ -31,8 +30,9 @@ function MyLocation() {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        if (data && data.display_name) {
-          setAddress(data.display_name);
+        if (data && data.address) {
+          const { city, state, country } = data.address;
+          setAddress(`${city}, ${state}, ${country}`);
         } else {
           console.log("No results found");
         }

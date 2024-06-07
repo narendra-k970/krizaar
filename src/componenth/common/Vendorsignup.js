@@ -3,9 +3,11 @@ import Header from "../header/Header";
 import { NavLink } from "react-router-dom";
 import Footer from "../header/Footer";
 import { REACT_BASE_PATH } from "../../api";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Vendorsignup = () => {
+  const navigate = useNavigate();
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -27,6 +29,15 @@ const Vendorsignup = () => {
     const storedVendor = localStorage.getItem("vendor");
     console.log(JSON.parse(storedVendor), "++++++++++++++++++++++++++++++");
   }, []);
+
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setEselling([...eselling, value]);
+    } else {
+      setEselling(eselling.filter((item) => item !== value));
+    }
+  };
 
   const submitData = () => {
     axios
@@ -87,6 +98,7 @@ const Vendorsignup = () => {
         .then((resp) => {
           console.log(resp);
           setVendor(resp.data);
+          navigate("/dashbord");
         })
         .catch((err) => {
           console.log("error");
@@ -234,8 +246,8 @@ const Vendorsignup = () => {
                             type="checkbox"
                             name="prodselling"
                             value="sfbm"
-                            checked={eselling === "sfbm"}
-                            onChange={(e) => setEselling(e.target.value)}
+                            checked={eselling.includes("sfbm")}
+                            onChange={handleCheckboxChange}
                           />
                           FBM
                         </label>
@@ -244,8 +256,8 @@ const Vendorsignup = () => {
                             type="checkbox"
                             name="prodselling"
                             value="pfbk"
-                            checked={eselling === "pfbk"}
-                            onChange={(e) => setEselling(e.target.value)}
+                            checked={eselling.includes("pfbk")}
+                            onChange={handleCheckboxChange}
                           />
                           FBK
                         </label>
@@ -327,13 +339,10 @@ const Vendorsignup = () => {
                   <div className="sign-form">
                     <h5 className="mb-4">Authentication required</h5>
                     <p>
-                      <b>IN +917042469640 Change</b>
-                      <br />
                       We’ve sent a One Time Password (OTP) to the mobile number
                       above. Please enter it to complete verification
                     </p>
                     <label htmlFor="otp">Enter OTP</label>
-                    <br />
                     <input
                       type="text"
                       id="otp"
@@ -363,11 +372,11 @@ const Vendorsignup = () => {
               <div className="amazon-box">
                 <span className="amazon">or</span>
               </div>
-              <div className="create-acc-box">
+              {/* <div className="create-acc-box">
                 <button className="create-acc">
                   Sign in with your Password
                 </button>
-              </div>
+              </div> */}
             </div>
           )}
           <hr className="mt-5 mb-3" />

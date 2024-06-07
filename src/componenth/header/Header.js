@@ -3,9 +3,10 @@ import envalope from "../img/envelope.png";
 import phone from "../img/phone-alt.png";
 import heart from "../img/heart.png";
 import download from "../img/download.png";
-import logo from "../img/krizaar-logo.png";
+import logo from "../img/krizaarlogo.jpeg";
 import Geolocation from "../common/Geolocation";
-import map from "../img/map-marker-alt.png";
+// import map from "../img/map-marker-alt.png";
+import RoomIcon from "@material-ui/icons/Room";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./header.css";
@@ -17,13 +18,10 @@ const Header = () => {
   const handleLogout = () => {
     console.log("Logging out...");
 
-    // Clear all localStorage data
     localStorage.clear();
 
-    // Check localStorage to ensure it's cleared
     console.log("localStorage after clear:", localStorage);
 
-    // Redirect to the login page
     navigate("/signin");
     console.log("Redirecting to /signin");
   };
@@ -38,7 +36,7 @@ const Header = () => {
                 <img src={envalope} alt="envalope" className="header-icon" />
                 info@krizaar.com
               </span>
-              <span className="info">
+              <span className="info ps-2">
                 <img src={phone} alt="envalope" className="header-icon" />
                 +910123456789
               </span>
@@ -63,15 +61,18 @@ const Header = () => {
         <div className="container-fluid">
           <div className="row header-sec2">
             <div className="col-lg-2">
-              <img src={logo} alt="logo" className="logo" />
+              <NavLink to="/">
+                <img src={logo} alt="logo" className="logo" />
+              </NavLink>
             </div>
             <div className="col-lg-2 res-box">
               <div className="map-box">
-                <img src={map} alt="map" className="map-img" />
+                {/* <img src={map} alt="map" className="map-img" /> */}
+                <RoomIcon className="map-img" />
                 <Geolocation />
               </div>
             </div>
-            <div className="col-lg-4 res-box">
+            <div className="col-lg-3 res-box">
               <div className="search-container">
                 <select className="category-dropdown">
                   <option value="all">All</option>
@@ -87,7 +88,7 @@ const Header = () => {
                 <button className="search-button">Search</button>
               </div>
             </div>
-            <div className="col-lg-2 res-box">
+            <div className="col-lg-3 res-box">
               <div className="dropdown drop-login">
                 <button
                   className="btn btn-secondary dropdown-toggle drop-btn"
@@ -95,8 +96,7 @@ const Header = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <FaUserCircle />
-                  Login/Signup
+                  <FaUserCircle className="user-circle" />
                 </button>
                 <ul className="dropdown-menu">
                   <li>
@@ -119,10 +119,10 @@ const Header = () => {
                 </ul>
               </div>
               <span>
-                <i className="fa fa-shopping-cart icon-img1 ms-2"></i>
+                <i className="fa fa-shopping-cart icon-img1 ms-2 res-box"></i>
               </span>
               <span>
-                <i className="fa fa-exchange icon-img1 ms-2"></i>
+                <i className="fa fa-exchange icon-img1 ms-2 res-box"></i>
               </span>
             </div>
             <div className="col-lg-2 be-seller">

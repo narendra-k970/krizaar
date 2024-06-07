@@ -10,11 +10,6 @@ const CountdownTimer = () => {
     } else {
       return (
         <div style={{ textAlign: "center", fontFamily: "Arial, sans-serif" }}>
-          <h2 style={{ fontSize: "28px", padding: "34px", fontWeight: 700 }}>
-            Special offers <br />
-            up to <span style={{ color: "#C22D57" }}>50% </span>
-            off
-          </h2>
           <div
             style={{
               background: "#C22D57",
@@ -22,11 +17,6 @@ const CountdownTimer = () => {
               borderRadius: "5px",
             }}
           >
-            <h3
-              style={{ fontSize: "28px", color: "#fff", paddingBottom: "10px" }}
-            >
-              Harry up! offer ends in
-            </h3>
             <div
               style={{ display: "flex", justifyContent: "center", gap: "10px" }}
             >

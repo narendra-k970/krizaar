@@ -1,14 +1,13 @@
 import React from "react";
 import radio from "../img/radio.png";
 import icon1 from "../img/clock.png";
-import icon2 from "../img/heart-1.png";
-import icon3 from "../img/compare.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import product1 from "../img/image-8.png";
 import product2 from "../img/image-18.png";
 import product3 from "../img/image-19.png";
@@ -23,6 +22,7 @@ import pgallery1 from "../img/progallery1.png";
 import pgallery2 from "../img/progallery2.png";
 import pgallery3 from "../img/progallery3.png";
 import pgallery4 from "../img/progallery4.png";
+import Countdownslide from "./Countdownslide";
 
 const Productslide = () => {
   return (
@@ -104,18 +104,10 @@ const Productslide = () => {
                               Add to Cart
                             </button>
                             <span className="prod-icon1">
-                              <img
-                                src={icon2}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                              <FavoriteBorderIcon className="whishlist-icon1" />
                             </span>
-                            <span className="prod-icon1">
-                              <img
-                                src={icon3}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                            <span className="prod-icon2">
+                              <i className="fa fa-exchange exchange-icon"></i>
                             </span>
                           </span>
                         </div>
@@ -161,18 +153,10 @@ const Productslide = () => {
                               Add to Cart
                             </button>
                             <span className="prod-icon1">
-                              <img
-                                src={icon2}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                              <FavoriteBorderIcon className="whishlist-icon1" />
                             </span>
-                            <span className="prod-icon1">
-                              <img
-                                src={icon3}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                            <span className="prod-icon2">
+                              <i className="fa fa-exchange exchange-icon"></i>
                             </span>
                           </span>
                         </div>
@@ -190,8 +174,11 @@ const Productslide = () => {
                         <div className="col-lg-7">
                           <span className="timer">
                             <img src={icon1} alt="clock" />
-                            <span className="time-number">
+                            {/* <span className="time-number">
                               200 days : 24H : 45M : 20S
+                            </span> */}
+                            <span>
+                              <Countdownslide />
                             </span>
                           </span>
                           <p className="pt-3">
@@ -218,18 +205,10 @@ const Productslide = () => {
                               Add to Cart
                             </button>
                             <span className="prod-icon1">
-                              <img
-                                src={icon2}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                              <FavoriteBorderIcon className="whishlist-icon1" />
                             </span>
-                            <span className="prod-icon1">
-                              <img
-                                src={icon3}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                            <span className="prod-icon2">
+                              <i className="fa fa-exchange exchange-icon"></i>
                             </span>
                           </span>
                         </div>
@@ -294,20 +273,44 @@ const Productslide = () => {
                               Add to Cart
                             </button>
                             <span className="prod-icon1">
-                              <img
-                                src={icon2}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                              <FavoriteBorderIcon className="whishlist-icon1" />
                             </span>
-                            <span className="prod-icon1">
-                              <img
-                                src={icon3}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                            <span className="prod-icon2">
+                              <i className="fa fa-exchange exchange-icon"></i>
                             </span>
                           </span>
+                        </div>
+                        <div className="row mt-3">
+                          <div>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery1}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery2}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery3}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery4}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -353,20 +356,44 @@ const Productslide = () => {
                               Add to Cart
                             </button>
                             <span className="prod-icon1">
-                              <img
-                                src={icon2}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                              <FavoriteBorderIcon className="whishlist-icon1" />
                             </span>
-                            <span className="prod-icon1">
-                              <img
-                                src={icon3}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                            <span className="prod-icon2">
+                              <i className="fa fa-exchange exchange-icon"></i>
                             </span>
                           </span>
+                        </div>
+                        <div className="row mt-3">
+                          <div>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery1}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery2}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery3}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery4}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -412,58 +439,49 @@ const Productslide = () => {
                               Add to Cart
                             </button>
                             <span className="prod-icon1">
-                              <img
-                                src={icon2}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                              <FavoriteBorderIcon className="whishlist-icon1" />
                             </span>
-                            <span className="prod-icon1">
-                              <img
-                                src={icon3}
-                                alt="whish"
-                                className="prod-icon2"
-                              />
+                            <span className="prod-icon2">
+                              <i className="fa fa-exchange exchange-icon"></i>
                             </span>
                           </span>
+                        </div>
+                        <div className="row mt-3">
+                          <div>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery1}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery2}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery3}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                            <span className="p-gal">
+                              <img
+                                src={pgallery4}
+                                alt="pro-gallery"
+                                className="img-fluid"
+                              />
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </SwiperSlide>
                 </Swiper>
-
-                <div className="row">
-                  <div>
-                    <span className="p-gal">
-                      <img
-                        src={pgallery1}
-                        alt="pro-gallery"
-                        className="img-fluid"
-                      />
-                    </span>
-                    <span className="p-gal">
-                      <img
-                        src={pgallery2}
-                        alt="pro-gallery"
-                        className="img-fluid"
-                      />
-                    </span>
-                    <span className="p-gal">
-                      <img
-                        src={pgallery3}
-                        alt="pro-gallery"
-                        className="img-fluid"
-                      />
-                    </span>
-                    <span className="p-gal">
-                      <img
-                        src={pgallery4}
-                        alt="pro-gallery"
-                        className="img-fluid"
-                      />
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

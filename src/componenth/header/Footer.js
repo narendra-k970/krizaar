@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="col-lg-5">
               <div className="row b-bor">
                 <p className="sec-store">Download App</p>
-                <div className="col-lg-4">
+                <div className="col-lg-6">
                   <button
                     type="button"
                     className="btn"

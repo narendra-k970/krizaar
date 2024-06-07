@@ -435,10 +435,19 @@ const Slider = () => {
                 slidesPerView={3}
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 navigation
-                // pagination={{ clickable: true }}
-                // scrollbar={{ draggable: true }}
-                // onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log("slide change")}
+                breakpoints={{
+                  // when window width is >= 320px
+                  320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  // when window width is >= 640px
+                  640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <div className="product-box-2">
@@ -583,7 +592,10 @@ const Slider = () => {
             <div className="col-lg-4">
               <div className="men-style-box">
                 <h5>
-                  <b>Up to 60% off | Styles for men</b>
+                  <b>
+                    Up to 60% off | Styles <br />
+                    for men
+                  </b>
                 </h5>
                 <div className="row">
                   <div className="col-lg-6 prod-box">

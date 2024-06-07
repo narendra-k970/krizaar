@@ -71,7 +71,13 @@
 .carousel-indicators {
   top: 200px;
 }
-
+.whislist-icon{
+  font-size: 30px;
+  color: #C22D57;
+}
+.whishlist-icon1{
+  color: #C22D57;
+}
 .addc-btn {
   background-color: #C22D57;
   color: #fff;
@@ -97,16 +103,28 @@
 }
 
 .p-gal {
-  padding-left: 60px;
+  padding-left: 40px;
 }
 
 .prod-icon1 {
   margin-left: 20px;
   border: 2px solid #C22D57;
-  padding: 10px;
+  padding: 5px;
   border-radius: 50%;
 }
-
+.prod-icon2 {
+  margin-left: 20px;
+  border: 2px solid #C22D57;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 50%;
+}
+.exchange-icon{
+  font-size: 18px;
+  color: #C22D57;
+}
 .prod-heading {
   color: #C22D57;
 }
@@ -782,7 +800,8 @@ padding: 3px 0px;
   width: 220px;
   /* padding: 5px 40px; */
   border: 1px solid #C22D57;
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  margin: 5px;
 }
 .vendor-btn{
   display: flex;
@@ -863,7 +882,7 @@ padding: 3px 0px;
 }
 
 .email-input {
-  width: 450px;
+  width: 24rem;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1006,7 +1025,7 @@ padding: 3px 0px;
     /* position: absolute; */
     display: flex;
     justify-content: flex-end;
-    margin-top: -130px;
+    margin-top: -100px;
   }
 }
 

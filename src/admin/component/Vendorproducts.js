@@ -3,6 +3,15 @@ import axios from "axios";
 
 const Vendorproducts = () => {
   const [data, setData] = useState([]);
+
+  const [selectedOption, setSelectedOption] = useState("");
+  const [entriesToShow, setEntriesToShow] = useState();
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+    setEntriesToShow(parseInt(event.target.value));
+  };
+
   const fetchData = async () => {
     try {
       const response = await axios.post(
@@ -42,6 +51,29 @@ const Vendorproducts = () => {
             </div>
             <div className="row">
               <div className="vendor-search my-4">
+                <div>
+                  <label htmlFor="entries"> Show entries: </label>
+                  <select
+                    id="entries"
+                    value={selectedOption}
+                    onChange={handleChange}
+                  >
+                    <option value="10"> 10 </option>
+                    <option value="20"> 20 </option>
+                    <option value="30"> 30 </option>
+                  </select>
+                  <ul>
+                    {/* Render the appropriate number of entries based on selectedOption */}
+                    {Array.from(
+                      {
+                        length: entriesToShow,
+                      },
+                      (_, index) => (
+                        <li key={index}> {`Entry ${index + 1}`} </li>
+                      )
+                    )}
+                  </ul>
+                </div>
                 <div className="search-container">
                   <input
                     type="text"

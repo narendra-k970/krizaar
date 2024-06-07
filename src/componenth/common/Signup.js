@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from "../header/Header";
 import Footer from "../header/Footer";
 import { REACT_BASE_PATH } from "../../api";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ const Signup = () => {
   const [otp, setOtp] = useState();
 
   const [user, setUser] = useState({});
+  console.log(user, "-----------------------------------------------------");
 
   const submitData = () => {
     if (email && password) {
@@ -38,42 +39,24 @@ const Signup = () => {
   };
 
   const verifyEmail = () => {
-    console.log("chali api");
     if (otp) {
+      console.log("chali api");
       axios
         .post(`${REACT_BASE_PATH}/auth/user/otpvarification`, {
           user: {
             user_contact: user.mail,
-            userId: user.userId,
+            userId: user.userid,
             otp: otp,
           },
         })
         .then((resp) => {
-          // console.log(resp);
-          if (resp.status === 200) {
-            console.log(user);
-            axios
-              .post(`${REACT_BASE_PATH}/auth/user/login`, {
-                user: {
-                  user_contact: email,
-                  password: password,
-                },
-              })
-              .then((resp) => {
-                if (resp.status === 200) {
-                  console.log(resp.data, "data aya");
-                  const tokenString = JSON.stringify(resp.data);
-                  localStorage.setItem("token", tokenString);
-                  navigate("/");
-                }
-              })
-              .catch((err) => {
-                console.log("error");
-              });
-          }
+          console.log(resp, "-----------");
+          const tokenString = JSON.stringify(resp.data);
+          localStorage.setItem("token", tokenString);
+          navigate("/");
         })
         .catch((err) => {
-          console.log("error");
+          console.log("erroeeeeeeeeeeeeeeeeeeeeer", err);
         });
     }
   };
@@ -91,7 +74,6 @@ const Signup = () => {
                   <div className="sign-form">
                     <h5 className="mb-4">Sign up</h5>
                     <label htmlFor="email">Email or Phone Number</label>
-                    <br />
                     <input
                       type="text"
                       id="email"
@@ -135,9 +117,11 @@ const Signup = () => {
                 <span className="amazon">New to Amazon?</span>
               </div>
               <div className="create-acc-box">
-                <button className="create-acc">
-                  Create your Krizaar account
-                </button>
+                <NavLink to="/signin">
+                  <button className="create-acc">
+                    Login in your krizaar account
+                  </button>
+                </NavLink>
               </div>
             </div>
           )}
@@ -150,7 +134,6 @@ const Signup = () => {
                   <div className="sign-form">
                     <h5 className="mb-4">Sign in</h5>
                     <label htmlFor="email">Password</label>
-                    <br />
                     <input
                       type="text"
                       id="password"
@@ -187,7 +170,12 @@ const Signup = () => {
                 <span className="amazon">or</span>
               </div>
               <div className="create-acc-box">
-                <button className="create-acc">Get an OTP on your Phone</button>
+                <NavLink to="/signin">
+                  <button className="create-acc">
+                    Login in your krizaar account
+                  </button>
+                </NavLink>
+                {/* <button className="create-acc">Get an OTP on your Phone</button> */}
               </div>
             </div>
           )}
@@ -200,13 +188,12 @@ const Signup = () => {
                   <div className="sign-form">
                     <h5 className="mb-4">Authentication required</h5>
                     <p>
-                      <b>IN +917042469640 Change</b>
-                      <br />
-                      We’ve sent a One Time Password (OTP) to the mobile number
-                      above. Please enter it to complete verification
+                      {/* <b>IN +917042469640 Change</b> */}
+                      We’ve sent a One Time Password (OTP) to the mobile
+                      number/Email above. Please enter it to complete
+                      verification
                     </p>
                     <label htmlFor="email">Enter OTP</label>
-                    <br />
                     <input
                       type="text"
                       id="otp"
@@ -237,9 +224,14 @@ const Signup = () => {
                 <span className="amazon">or</span>
               </div>
               <div className="create-acc-box">
-                <button className="create-acc">
+                {/* <button className="create-acc">
                   Sign in with your Password
-                </button>
+                </button> */}
+                <NavLink to="/signin">
+                  <button className="create-acc">
+                    Login in your krizaar account
+                  </button>
+                </NavLink>
               </div>
             </div>
           )}
